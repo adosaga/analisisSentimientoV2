@@ -196,7 +196,7 @@ public class FileUploadController {
             		   columnas[2]=columnas[2].replace("  ", " "); 
             	   //	////////////////////////////////////////////////////////////////////////////
             		   RestTemplate restTemplate = new RestTemplate();
-            		   String call = "https://translation.googleapis.com/language/translate/v2?target=en&key=AIzaSyCh5lZljqpShNTaz-UxCiSCsn6elk2cMxc&q=";
+            		   String call = "https://translation.googleapis.com/language/translate/v2?target=en&key=xxxxxxxxx&q=";
             		   call += columnas[2];
             		   GTranslate trad = restTemplate.getForObject(call, GTranslate.class);
             		   String traduccion = trad.data.translations.get(0).translatedText;
@@ -207,7 +207,7 @@ public class FileUploadController {
             		   texto.text = traduccion;
             		   call = "https://gateway-wdc.watsonplatform.net/tone-analyzer/api/v3/tone?version=2019-10-06";
             		   restTemplate.getInterceptors().add(new BasicAuthorizationInterceptor(
-            				   "apikey","hvTqKTOOT-w5dfSqNzGpbZSelOl98B3yTCpIePaS3EYU"));
+            				   "apikey","xxxxxxxx"));
             		   AnalisisSentimiento respAnalisis = restTemplate.postForObject(call, texto, AnalisisSentimiento.class);
             		   String senti="";
             	   //	//////////Anger////////////////////////////////////
